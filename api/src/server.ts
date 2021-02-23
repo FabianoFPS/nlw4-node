@@ -1,5 +1,8 @@
+import 'reflect-metadata';
 import express, { Request, Response } from 'express';
 import { log } from 'debug';
+
+import './database';
 
 const app = express();
 app.use(express.json());
