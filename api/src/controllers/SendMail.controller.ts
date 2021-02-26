@@ -39,14 +39,14 @@ export class SendmailController {
         user_id,
         survey_id,
       });
-      await surveysUsersRepository.save(surveyUser);
+      surveyUser = await surveysUsersRepository.save(surveyUser);
     }
     const npsPath = resolve(__dirname, '..', 'views', 'emails', 'npsMail.hbs');
     const variables = {
       name,
       title,
       description,
-      user_id,
+      id: surveyUser.id,
       link: process.env.URL_MAIL,
     }
 
