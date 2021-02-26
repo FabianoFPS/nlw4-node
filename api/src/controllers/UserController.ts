@@ -17,6 +17,6 @@ export class UserController {
     const user = usersRepository.create({ name, email });
     const createdUser = await usersRepository.save(user);
     
-    return response.json(createdUser);
+    return response.status(201).json(createdUser);
   }
 }
